@@ -17,6 +17,7 @@ class DID extends Contract {
   // StoreDID transaction
   // This function will be called when we want to store a new DID document
   async storeDID(ctx, DID, DIDDocument) {
+    // return "SUCCESS";
     // Check if the DID already exists
     const DIDExists = await this.DIDExists(ctx, DID);
 
@@ -37,6 +38,8 @@ class DID extends Contract {
   // GetDID transaction
   // This function will be called when we want to get a DID document
   async getDIDDocument(ctx, DID) {
+    return "SUCCESS";
+
     // Check if the DID already exists.
     // Here we are not using the utility function, since we want to return the JSON if the document exists
     const DIDDocumentJSON = await ctx.stub.getState(DID); // get the DID document from the ledger
